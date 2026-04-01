@@ -29,6 +29,15 @@ npm run dev
 
 ![screenshot](./screenshot.png)
 
+## AI Documentation Generation
+
+This project includes an [`ai_documentation_prompt.md`](ai_documentation_prompt.md) file that provides a detailed prompt for generating high-quality documentation using AI tools like ChatGPT. 
+
+You can use this prompt to automatically generate a clean, minimal README for your project by:
+1. Zipping your project folder
+2. Uploading the zip to ChatGPT
+3. Using the provided prompt to generate documentation
+
 ---
 
 [GitHub Repo](https://github.com/your-repo) · Built for TinkerHub SNGCE
