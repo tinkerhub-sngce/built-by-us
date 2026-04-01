@@ -29,7 +29,9 @@ Make sure your project:
    ```
    built-by-us/
    └── your-project-name/
-       └── README.md
+       └── README.md  [follow the readme template provided]
+       └──initiative.png
+
    ```
 
 3. **Open a Pull Request** with all required details (see below)
