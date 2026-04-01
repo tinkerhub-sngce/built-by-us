@@ -127,4 +127,4 @@ Before finishing:
 
 ---
 
-Now generate the README.md.
+Now generate the README.md that is in copy paste version
