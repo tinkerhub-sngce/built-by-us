@@ -27,104 +27,97 @@ You can use tools like ChatGPT to generate high-quality documentation for your p
 
 Copy and paste this:
 
-
-
-
-You are a developer exploring a project for the first time.
-
-A zip file of the project has been provided. Carefully analyze the codebase, folder structure, dependencies, and intent behind the project.
-
-Your goal is to understand the project like a real user or contributor would, and then generate a clean, minimal, and well-structured README.md.
+SYSTEM ROLE: You are a technical writer generating a README.md file. Your output must be a single, raw markdown document with zero prose before or after it.
 
 ---
 
-### 🧠 Context
-
-This project is part of **Built by Us — Intro Edition**, a student initiative to showcase real projects.  
-The README should feel:
-- Clear and human-readable  
-- Not overly long  
-- Honest (even if the project is simple or incomplete)  
+STRICT OUTPUT RULES:
+1. Output ONLY the raw markdown content of README.md.
+2. Do NOT wrap your output in triple backticks or any code fence.
+3. Do NOT include any explanation, preamble, or closing remarks.
+4. Do NOT add any section not specified below.
+5. Start your response with exactly: `![Built by Us](./initiative.png)`
+6. All code blocks inside the README must use triple backticks with the language identifier.
+7. Use standard ATX-style headings (# H1, ## H2, ### H3) only.
+8. Use `---` for horizontal rules. Do NOT use `***` or `___`.
+9. For inline HTML (like the banner), output it exactly as specified.
+10. Do not escape underscores, asterisks, or brackets unless they are inside a code block.
 
 ---
 
-### 🎨 Banner Requirement
+CONTEXT:
+This README is for a student project submitted to "Built by Us — Intro Edition", a TinkerHub initiative. The tone should be honest, direct, and developer-friendly. Even if the project is simple or incomplete, present it clearly without inflating it.
 
-At the very top of the README, include this banner:
+---
+
+ANALYSIS INSTRUCTIONS:
+Before writing, silently analyze the uploaded project for:
+- Primary language and framework (from file extensions, package.json, requirements.txt, etc.)
+- Project purpose (from folder names, file names, and any existing comments or docs)
+- Entry point and how to run it
+- Required environment variables (look for .env.example, config files, or hardcoded references)
+- Any obvious limitations or incomplete features
+
+Do NOT mention technologies that are not found in the project files.
+
+---
+
+README STRUCTURE TO GENERATE:
+
+Use exactly this structure, in this order:
 
 <p align="center">
-  <img src="./initiative.png" alt="Built by Us banner" />
+  <img src="./initiative.png" alt="Built by Us — Intro Edition" />
 </p>
 
----
+# [Project Name]
 
-### ✍️ Writing Style
+[One sentence describing what this project does and who it is for.]
 
-- Write like a developer explaining to another developer  
-- Keep it simple and direct  
-- Avoid buzzwords or over-explanation  
-- Prefer clarity over length  
+**Tech Stack:** [List only what is actually present in the project]
+**Built by:** [Contributor 1](https://github.com/username) · [Contributor 2](https://github.com/username)
 
 ---
 
-### 📄 Structure to Generate
+## What it does
 
-# Project Name
-
-Write a clear, meaningful one-line description of the project.
-
-**Tech Stack:** Infer from the project files  
-**Built by:** Leave placeholders for contributors  
+[2–3 sentences maximum. State the problem, the solution, and why it matters. No bullet points here.]
 
 ---
 
-### What it does
+## How to run it
+```[language]
+[Exact setup and run commands inferred from the project]
+```
 
-Explain:
-- What problem this project solves  
-- Who it is for  
-- What makes it useful  
+[If environment variables are needed, add a short block like:]
+> Copy `.env.example` to `.env` and fill in the required values before running.
 
-Keep it within 2–3 lines.
-
----
-
-### How to run it
-
-- Detect the correct setup steps from the project  
-- Include installation and run commands  
-- Mention environment variables if required  
+[If no env vars exist, omit this note entirely.]
 
 ---
 
-### Demo
+## Demo
 
-- Describe what the output or usage looks like  
-- Suggest where screenshots or demo links can be added  
-
----
-
-### Additional Notes (only if needed)
-
-- Mention anything important like configs, limitations, or assumptions  
+<!-- Add a screenshot, GIF, or hosted link below -->
+[screenshot or demo placeholder]
 
 ---
 
-### ⚡ Final Check
+## Notes
 
-Before finishing:
-- Ensure it can be understood in under 30 seconds  
-- Avoid unnecessary text  
-- Keep formatting clean and consistent  
+[Include ONLY if there is something genuinely important: known bugs, missing features, assumptions made, or special configuration. If nothing critical exists, omit this section entirely.]
 
 ---
 
-### 🚫 Avoid
-
-- Do not hallucinate features  
-- Do not add technologies not present  
-- Do not overcomplicate simple projects  
+[GitHub Repo](https://github.com/your-repo) · Built for TinkerHub SNGCE
 
 ---
 
-Now generate the README.md that is in copy paste version
+FINAL VALIDATION (apply silently before outputting):
+- [ ] No text appears before the first line of markdown
+- [ ] No text appears after the last line of markdown  
+- [ ] Every code block has an opening and closing triple backtick
+- [ ] No fabricated features or technologies are mentioned
+- [ ] The README can be understood in under 30 seconds
+- [ ] All links use standard markdown format: [text](url)
